@@ -1,0 +1,23 @@
+html {
+    height: 100%;
+    width: 100%;
+    background-color: #dcbe88;
+}
+
+.headerSection {
+    /*display: flex;*/
+    /*flex-direction: row;*/
+    /*justify-content: space-between;*/
+    margin: 0;
+    padding: 0;
+}
+
+.loginSection {
+    height: 200px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: stretch;
+    text-align: center;
+}
