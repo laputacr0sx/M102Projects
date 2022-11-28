@@ -12,20 +12,22 @@
   </head>
   <header>
     <div class="headerSection">
-      <img src="./images/logo.png" alt="HKUSPACE LOGO" />
-      <h1>SPACE Catering Company</h1>
+      <img class="headerLogo" src="./images/logo.png" alt="HKUSPACE LOGO" />
+      <p class="headerTitle">HKU SPACE Catering Company</p>
     </div>
-    <div class="loginSection">
-      <div>
-        <label for="usr">User Name</label
-        ><input type="text" name="usr" id="usr" />
+
+    <form action="./php/password.php" class="loginSection" method="post">
+      <div class="loginCredentials">
+        <label for="usr">Username:</label
+        ><input class="inputField" type="text" name="usr" id="usr" />
       </div>
-      <div>
-        <label for="pwd">Password</label
-        ><input type="password" name="pwd" id="pwd" />
+      <div class="loginCredentials">
+        <label for="pwd">Password:</label
+        ><input class="inputField" type="password" name="pwd" id="pwd" />
       </div>
-    </div>
+      <input type="submit" value="LogIn" />
+    </form>
   </header>
   <body></body>
-  <footer>&copy;</footer>
+  <footer class="footerSection">&copy;</footer>
 </html>

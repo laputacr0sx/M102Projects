@@ -1,23 +1,54 @@
 html {
-    height: 100%;
-    width: 100%;
-    background-color: #dcbe88;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+  background-color: #dcbe88;
+}
+
+label {
+  font-family: "Comic Sans MS", serif;
 }
 
 .headerSection {
-    /*display: flex;*/
-    /*flex-direction: row;*/
-    /*justify-content: space-between;*/
-    margin: 0;
-    padding: 0;
+  /*display: flex;*/
+  /*flex-direction: row;*/
+  /*justify-content: space-between;*/
+  margin: 0;
+  padding: 0;
+}
+
+.headerLogo {
+  position: absolute;
+  top: 5px;
+  left: 0;
+}
+
+.headerTitle {
+  position: absolute;
+  right: 0;
+    top: 0;
 }
 
 .loginSection {
-    height: 200px;
-
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: stretch;
-    text-align: center;
+  height: 200px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: stretch;
+  text-align: center;
 }
+.footerSection {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+
+.inputField{
+  height: 20px;
+  width: 200px;
+  padding-left: 4px;
+  border-radius: 10px;
+}
+
