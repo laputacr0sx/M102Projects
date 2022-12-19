@@ -28,7 +28,7 @@ label {
 .headerTitle {
   position: absolute;
   right: 0;
-    top: 0;
+  top: 0;
 }
 
 .loginSection {
@@ -45,10 +45,14 @@ label {
   left: 0;
 }
 
-.inputField{
+.inputField {
   height: 20px;
   width: 200px;
   padding-left: 4px;
   border-radius: 10px;
 }
 
+.errorMessage{
+  color: red;
+  font-size: xx-large;
+}
