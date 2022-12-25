@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="dataSourceStorageLocal" created-in="PS-222.4345.15">
+    <data-source name="infinityFree" uuid="f6e45fac-255c-4115-abbe-6beee69c2e5b">
+      <database-info product="" version="" jdbc-version="" driver-name="" driver-version="" dbms="MYSQL" exact-version="0" />
+      <secret-storage>master_key</secret-storage>
+      <user-name>epiz_33167176</user-name>
+      <schema-mapping />
+    </data-source>
+    <data-source name="railway.app" uuid="b39e9c5b-4086-4c19-a4fe-61de09b07776">
+      <database-info product="" version="" jdbc-version="" driver-name="" driver-version="" dbms="MYSQL" exact-version="0" />
+      <secret-storage>master_key</secret-storage>
+      <schema-mapping />
+    </data-source>
+  </component>
+</project>

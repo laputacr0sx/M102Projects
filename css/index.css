@@ -52,7 +52,7 @@ label {
   border-radius: 10px;
 }
 
-.errorMessage{
+.errorMessage {
   color: red;
-  font-size: xx-large;
+  font-size: large;
 }

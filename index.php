@@ -1,46 +1,69 @@
-<?php
-session_start();
-echo isset($_SESSION["login"]);
-if (isset($_SESSION["login"])) {
-    header("LOCATION:admin.php");
-    die();
-}
-?>
 <!DOCTYPE html>
-<html lang="utf-8">
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
+    />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+      <link rel="stylesheet" href="./css/index.css"/>
+    <title>SPACE Catering Company</title>
+  </head>
+  <header>
+    <div class="headerSection">
+      <img class="headerLogo" src="./images/logo.png" alt="HKUSPACE LOGO" />
+      <p class="headerTitle">HKU SPACE Catering Company</p>
+    </div>
 
-<head>
-    <meta http-equiv='content-type' content='text/html;charset=utf-8' />
-    <title>Login</title>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-</head>
-<body>
-<div class="container">
-    <h3 class="text-center">Login</h3>
-    <?php if (isset($_POST["submit"])) {
-        $username = $_POST["username"];
-        $password = $_POST["password"];
-        if ($username === "admin" && $password === "password") {
-            $_SESSION["login"] = true;
-            header("LOCATION:admin.php");
-            die();
+    <form action="#" class="loginSection" method="post">
+
+      <div class="loginCredentials">
+        <label for="usr">Username:</label
+        ><input class="inputField" type="text" name="usr" id="usr" />
+      </div>
+      <div class="loginCredentials">
+        <label for="pwd">Password:</label
+        ><input class="inputField" id="pwd" name="pwd" type="password" />
+      </div>
+
+        <?php
+        include "./include/db_connect.php";
+
+        $conn = OpenCon();
+
+        echo "Connected Successfully";
+
+        CloseCon($conn);
+
+        // Given password
+        if (!empty($_POST)) {
+            $password = $_POST["pwd"];
+        } else {
+            $password = "";
         }
-        echo "<div class='alert alert-danger'>Username and Password do not match.</div>";
-    } ?>
-    <form action="" method="post">
-        <div class="form-group">
-            <label for="username">Username:</label>
-            <input type="text"
-                   class="form-control" id="username" name="username" required>
-        </div>
-        <div class="form-group">
-            <label for="pwd">Password:</label>
-            <input type="password" class="form-control" id="pwd" name="password" required>
-        </div>
-        <button type="submit" name="submit" class="btn btn-default">Login</button>
+        // Validate password strength
+        $uppercase = preg_match("@[A-Z]@", $password);
+        $lowercase = preg_match("@[a-z]@", $password);
+        $number = preg_match("@[0-9]@", $password);
+        $specialChars = preg_match("@[^\w]@", $password);
+
+        if (
+            !$uppercase ||
+            !$lowercase ||
+            !$number ||
+            !$specialChars
+            //    strlen($password) < 8
+        ) {
+            echo "<div class='errorMessage'> Password should be at least 8 characters in length and should include at least one upper case letter, one number, and one special character.</div>";
+        } else {
+            echo "Strong password.";
+        }
+        ?>
+
+        <input type="submit" value="LogIn" />
     </form>
-</div>
-</body>
+  </header>
+  <body></body>
+  <footer class="footerSection">&copy;</footer>
 </html>
